@@ -15,9 +15,10 @@ export const UserTitle = styled.p`
 export const Button = styled.button`
   cursor: pointer;
 
-  padding: 7px 10px;
+  padding: 5px 10px;
   color: black;
-  border: 1px solid #c8c8c8;
+  border: none;
+  /* border: 1px solid #c8c8c8; */
   display: inline-block;
   border-radius: 10px;
   background-color: #f5f4fa;

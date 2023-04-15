@@ -15,7 +15,6 @@ export const Form = styled(FormikForm)`
   border-radius: 5px;
   background-color: #2196f3;
 `;
-
 export const Field = styled(Input)`
   height: 30px;
   border-radius: 5px;

@@ -1,11 +1,16 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { Label, Field, Form, ErrorMessage, Button } from './LoginForm.styled';
 
 const SubmitSchema = Yup.object().shape({
-  email: Yup.string().nullable().email().required('Enter email').trim(),
+  email: Yup.string()
+    .nullable()
+    .email('Invalid email address')
+    .required('Enter email')
+    .trim(),
   password: Yup.string()
-    .min(8 | 'Minimum 8 characters!')
-    .max(14 | 'Maximum 14 characters!')
+    .min(8, 'Minimum 8 characters!')
+    .max(14, 'Maximum 14 characters!')
     .required('Enter password')
     .trim(),
 });
@@ -27,15 +32,15 @@ export function LoginForm() {
         onSubmit={handleSubmit}
       >
         <Form>
-          <label htmlFor="email">Email:</label>
+          <Label htmlFor="email">Email:</Label>
           <Field type="email" name="email" placeholder="Enter email" />
           <ErrorMessage name="email" component="span"></ErrorMessage>
 
-          <label htmlFor="password">Password:</label>
+          <Label htmlFor="password">Password:</Label>
           <Field type="password" name="password" placeholder="Enter password" />
           <ErrorMessage name="password" component="span"></ErrorMessage>
 
-          <button type="submit">Log in</button>
+          <Button type="submit">Log in</Button>
         </Form>
       </Formik>
     </div>
