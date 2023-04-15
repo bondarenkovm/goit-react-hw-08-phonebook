@@ -7,6 +7,8 @@ import {
   ErrorMessage,
   Button,
 } from './RegisterForm.styled';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/Auth/operations';
 
 const SubmitSchema = Yup.object().shape({
   name: Yup.string().required('Enter name').trim(),
@@ -16,14 +18,22 @@ const SubmitSchema = Yup.object().shape({
     .required('Enter email')
     .trim(),
   password: Yup.string()
-    .min(8, 'Minimum 8 characters!')
+    .min(6, 'Minimum 6 characters!')
     .max(14, 'Maximum 14 characters!')
     .required('Enter password')
     .trim(),
 });
 function RegisterForm() {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    dispatch(
+      register({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      })
+    );
     resetForm();
   };
 

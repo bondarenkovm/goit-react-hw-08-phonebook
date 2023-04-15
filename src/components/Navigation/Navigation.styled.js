@@ -7,7 +7,7 @@ export const List = styled.ul`
 `;
 export const Link = styled(NavLink)`
   color: #ffffff;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 20px;
   font-weight: 600;
   &.active {

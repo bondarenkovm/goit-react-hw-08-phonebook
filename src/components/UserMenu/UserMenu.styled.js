@@ -11,6 +11,7 @@ export const UserTitle = styled.p`
   font-size: 25px;
   line-height: 20px;
   font-weight: 600;
+  margin: 0;
 `;
 export const Button = styled.button`
   cursor: pointer;
