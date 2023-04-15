@@ -1,9 +1,7 @@
+import { Title } from './Home.styled';
+
 function Home() {
-  return (
-    <>
-      <h1>Welcome to Phonebook</h1>
-    </>
-  );
+  return <Title>Welcome to Phonebook</Title>;
 }
 
 export default Home;
